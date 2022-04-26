@@ -35,7 +35,8 @@ $(document).ready(function () {
  */
 
 		grupCercles = Snap.select("#grupCercles");
-		grupCercles.animate({transform: "r180 50 50"}, 5000)
+    grupCercles.addClass("rotacio");
+		// grupCercles.animate({transform: "r20 250 150"}, 5000)
 
 		// ----------------------------
 
@@ -53,20 +54,20 @@ $(document).ready(function () {
 
 		setInterval(function (){
 
-			colom.removeClass("vanish")
-			colom.addClass("aparish");
+			colom.removeClass("desapareix")
+			colom.addClass("apareix");
 			// colom.animate({ transform: "s0.5,0.5, t10,10" }, 1000)
 			
 			setTimeout(
 				function (){ 
-					colom.removeClass("aparish")
-					colom.addClass("vanish")
+					colom.removeClass("apareix")
+					colom.addClass("desapareix")
 					// colom.animate({ transform: "s0.5,0.5, t-10,-10" }, 1000)
 				}
-				, 3000
+				, 4000
 			)
 						
-		}, 5000)
+		}, 8000)
 
 
 
@@ -76,7 +77,7 @@ $(document).ready(function () {
 				colom.animate({ transform: "s1.2,1.2," + colomBox.cx + "," + colomBox.cy }, 1000, mina.bounce);
       },
       function () {
-				colom.animate( {transform: "s0.5,0.5"}, 1000, mina.bounce);
+				colom.animate( {transform: "s1.0,1.0"}, 1000, mina.bounce);
         // colom.animate({ y: 80 }, 500, mina.elastic);
       }
     );
