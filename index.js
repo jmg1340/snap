@@ -2,7 +2,11 @@ $(document).ready(function () {
   // First lets create our drawing surface out of existing SVG element
   // If you want to create new surface just provide dimensions
   // like s = Snap(800, 600);
+	console.log("Snap", Snap)
+
+
   var s = Snap("#canvas");
+	console.log("s", s)
   // Lets create big circle in the middle:
 
   // console.log("s", s)
@@ -13,17 +17,69 @@ $(document).ready(function () {
     s.append(f);
     console.log("f", f);
 
-    // colom = f.select("#idColom");
-    // console.log("colom", colom);
+		// ----------------------------
+/* 
+    const cercleGroc = Snap.select("#cercleGroc");
+    console.log("cercleGroc", cercleGroc);
 
-    // colom.hover(
-    //   function () {
-    //     colom.animate({ y: 960 }, 500, mina.elastic);
-    //   },
-    //   function () {
-    //     colom.animate({ y: 977.36218 }, 500, mina.elastic);
-    //   }
-    // );
+    const cercleTaronja = Snap.select("#cercleTaronja");
+    console.log("cercleTaronja", cercleTaronja);
+
+    const cercleVermell = Snap.select("#cercleVermell");
+    console.log("cercleVermell", cercleVermell);
+
+
+		const grupCercles = Snap().g(cercleGroc, cercleTaronja, cercleVermell)
+		s.append(grupCercles);
+
+ */
+
+		grupCercles = Snap.select("#grupCercles");
+		grupCercles.animate({transform: "r180 50 50"}, 5000)
+
+		// ----------------------------
+
+    const colom = Snap.select("#idColom");
+    console.log("colom", colom);
+
+		let colomBox = colom.getBBox();
+		console.log("colomBox", colomBox);
+
+		// ----------------------------
+
+		
+
+
+
+		setInterval(function (){
+
+			colom.removeClass("vanish")
+			colom.addClass("aparish");
+			// colom.animate({ transform: "s0.5,0.5, t10,10" }, 1000)
+			
+			setTimeout(
+				function (){ 
+					colom.removeClass("aparish")
+					colom.addClass("vanish")
+					// colom.animate({ transform: "s0.5,0.5, t-10,-10" }, 1000)
+				}
+				, 3000
+			)
+						
+		}, 5000)
+
+
+
+    colom.hover(
+      function () {
+        // colom.animate({ y: 69 }, 500, mina.elastic);
+				colom.animate({ transform: "s1.2,1.2," + colomBox.cx + "," + colomBox.cy }, 1000, mina.bounce);
+      },
+      function () {
+				colom.animate( {transform: "s0.5,0.5"}, 1000, mina.bounce);
+        // colom.animate({ y: 80 }, 500, mina.elastic);
+      }
+    );
 
 
     // console.log("s", s)
