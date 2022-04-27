@@ -1,0 +1,194 @@
+.borde {
+	border: 1px solid red;
+}
+
+
+
+
+
+@-webkit-keyframes kfFadein {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@-moz-keyframes kfFadein {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes kfFadein {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+.fadein {
+	/* background-color: green;
+	color: white; */
+	-webkit-animation: kfFadein 4s 4s linear normal infinite;
+	-moz-animation: kfFadein 4s 4s linear normal infinite;
+	animation: kfFadein 4s 4s linear normal infinite;
+}
+
+
+
+
+
+@-webkit-keyframes kfFadeout {
+	0% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
+
+@-moz-keyframes kfFadeout {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes kfFadeout {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+.fadeout {
+	/* background-color: green;
+	color: white; */
+	-webkit-animation: kfFadeout 4s linear normal infinite;
+	-moz-animation: kfFadeout 4s linear normal infinite;
+	animation: kfFadeout 4s linear normal infinite;
+}
+
+
+
+.fade {
+	animation: kfFadeout 4s linear normal infinite,
+						 kfFadein 4s linear normal infinite;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes desaparicio {
+	0% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
+
+.desapareix {
+	animation-name: desaparicio;
+	animation-duration: 4s;
+	animation-iteration-count: infinite;
+	/* animation-timing-function: linear;
+		animation-delay: 0.5s;
+		animation-iteration-count: 2;
+		animation-fill-mode: forwards; */
+}
+
+@keyframes aparicio {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+.apareix {
+	animation-name: aparicio;
+	animation-duration: 4s;
+	animation-iteration-count: infinite;
+	/* animation-timing-function: linear;
+		animation-delay: 0.5s;
+		animation-iteration-count: 2;
+		animation-fill-mode: forwards; */
+}
+
+.rotacio {
+	/* position: relative;
+	top: 10%;
+	left: 10%;
+	width: 0px;
+	height: 0px;
+	margin: -60px 0 0 -60px; */
+	-webkit-animation: spin 4s linear infinite;
+	-moz-animation: spin 4s linear infinite;
+	animation: spin 4s linear infinite;
+}
+
+/* 
+@-moz-keyframes spin {
+	100% {
+		-moz-transform: rotate(360deg);
+		-moz-transform-origin: center;
+	}
+}
+@-webkit-keyframes spin {
+	100% {
+		-webkit-transform: rotate(360deg);
+		-webkit-transform-origin: center;
+	}
+}
+*/
+@keyframes spin {
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+		transform-origin: center center;
+	}
+}

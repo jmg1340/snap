@@ -16,6 +16,7 @@ $(document).ready(function () {
   let logo = Snap.load("/logoBN.svg", function (f) {
     s.append(f);
     console.log("f", f);
+		// console.log("f.paper.g", f.paper.g());
 
 		// ----------------------------
 /* 
@@ -35,7 +36,21 @@ $(document).ready(function () {
  */
 
 		grupCercles = Snap.select("#grupCercles");
-    grupCercles.addClass("rotacio");
+    // grupCercles.addClass("rotacio");
+
+		const gcBox = grupCercles.getBBox()
+		console.log("gcBox", gcBox);
+
+		// var bbox = orange.getBBox(); //bounding box, get coords and centre
+
+		// orange.stop().animate({ transform: "r360," + bbox.cx + ',' + bbox.cy }, 1000);
+
+		// const rect = s.rect(gcBox.cx, gcBox.cy, 200, 100).attr({
+		// 	fill: "green",
+		// 	"fill-opacity": 0,
+		// 	stroke: "red",
+		// 	strokeWidth: 5
+		// })
 		// grupCercles.animate({transform: "r20 250 150"}, 5000)
 
 		// ----------------------------
