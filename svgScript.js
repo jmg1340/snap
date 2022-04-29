@@ -16,10 +16,35 @@ $(document).ready(function () {
 	const groc = s.select("#cercleGroc")
 	const taronja = s.select("#cercleTaronja")
 	const vermell = s.select("#cercleVermell")
+	console.log("Vermell", vermell)
+
+	const bbG = groc.getBBox()
+	const bbT = taronja.getBBox()
+	const bbV = vermell.getBBox()
+
+	// vermell.transform("s0.87")
+	// vermell.animate({transform: `s0.97 t-${bbT.cx},${bbT.cy}`},2000)
+
+	console.log("bbT.cx", parseInt(bbT.cx),"bbT.cy", parseInt(bbT.cy))
+	console.log("-------")
+	// vermell.drag()
 
 
+	var moveFunc = function (dx, dy, posx, posy) {
+    this.attr( { cx: posx , cy: posy } ); // basic drag, you would want to adjust to take care of where you grab etc.
+		console.log("posx", posx, "posy", posy)
+	};
 
-	const grupCercles = s.select("#grupCercles");
+	vermell.drag( moveFunc,
+							function(){
+									console.log("Move started");
+							},
+							function(){
+									console.log("Move stopped");
+							}
+			);
+
+	// const grupCercles = s.select("#grupCercles");
 	// grupCercles.transform("r45")
 
 	// grupCercles.attr({
